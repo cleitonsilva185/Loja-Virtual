@@ -9,7 +9,6 @@ namespace LojaVirtualCleiton.Models
     public class CategoriaViewModel
     {
         public Guid? Id { get; set; }
-        [Required(ErrorMessage = "Nome é obrigatorio.")]
         public string Nome { get; set; }
       
     }

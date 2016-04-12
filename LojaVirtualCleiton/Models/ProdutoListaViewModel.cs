@@ -6,16 +6,12 @@ using System.Web;
 
 namespace LojaVirtualCleiton.Models
 {
-    public class ProdutoViewModel
+    public class ProdutoListaViewModel
     {
         public Guid? Id { get; set; }
         [Required(ErrorMessage = "Nome é obrigatorio.")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Categoria  é obrigatorio.")]
-        public CategoriaViewModel Categoria { get; set; }
-
-        public IList<CategoriaViewModel> Categorias { get; set; }
-
+        public string Categoria { get; set; }
     }
 } 

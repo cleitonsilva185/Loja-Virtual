@@ -18,22 +18,31 @@ namespace LojaVirtualCleiton.Controllers
         {
             var produtos = new Produtos();
             var listaProdutos = produtos.Lista();
-            var lista = Mapper.Map<IList<ProdutoViewModel>>(listaProdutos);
+            var lista = Mapper.Map<IList<ProdutoListaViewModel>>(listaProdutos);
             return View(lista);     
             
             
         }
+
         public ActionResult Editar(Guid? id = null)
         {
+            ProdutoViewModel viewModel;
             if (id != null)
             {
                 var produtos = new Produtos();
                 var produto = produtos.Por(id);
-                var viewModel = Mapper.Map<ProdutoViewModel>(produto);
-
-                return View(viewModel);
+                viewModel = Mapper.Map<ProdutoViewModel>(produto);
+                
             }
-            return View();
+            else
+            {
+                viewModel = new ProdutoViewModel();
+            }
+            var categorias = new Categorias();
+            var listaCategorias = categorias.Lista();
+            viewModel.Categorias = Mapper.Map<IList<CategoriaViewModel>>(listaCategorias);
+
+            return View(viewModel);
         }
         [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
@@ -46,6 +55,10 @@ namespace LojaVirtualCleiton.Controllers
                 produtos.Salvar(produto);
                 return RedirectToAction("Lista");
             }
+            
+            var categorias = new Categorias();
+            var listaCategorias = categorias.Lista();
+            viewModel.Categorias = Mapper.Map<IList<CategoriaViewModel>>(listaCategorias);
             return View(viewModel);
         }
         public ActionResult Apagar(Guid id)

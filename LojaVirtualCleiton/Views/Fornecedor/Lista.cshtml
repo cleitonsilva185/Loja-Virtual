@@ -5,7 +5,7 @@
 }
 <h2>Lista de  Produtos</h2>
 
-<a href="@Url.Action("Editar","Produto")"style="float: right;"> Novo Produto</a>
+<a href="@Url.Action("Editar","Fornecedor")"style="float: right;"> Novo Fornecedor</a>
 
 <table>
     @foreach(var item in Model)
@@ -13,9 +13,10 @@
         <tr>
             <td>@item.Nome</td>
             <td>@item.Categoria</td>
+            <td>@item.Fornecedor</td>
             <td>
-                @Html.ActionLink("Editar", "Editar", "Produto", new { id = item.Id }, null)
-            @Html.ActionLink("Apagar", "Apagar", "Produto", new { id = item.Id }, null)
+                @Html.ActionLink("Editar", "Editar", "Fornecedor", new { id = item.Id }, null)
+            @Html.ActionLink("Apagar", "Apagar", "Fornecedor", new { id = item.Id }, null)
         </td>
         </tr>
     }

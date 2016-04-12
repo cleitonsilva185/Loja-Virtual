@@ -15,6 +15,8 @@ namespace Modelo
         {
             using (var session = NHibernateHelper.OpenSession())
                 return session.QueryOver<Produto>()
+                    .Fetch(p=>p.Categoria)
+                    .Eager
                     .List();
         }
 

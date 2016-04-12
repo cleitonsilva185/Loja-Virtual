@@ -12,10 +12,10 @@ namespace LojaVirtualCleiton.Mappers
     {
         protected override void Configure()
         {
-            Mapper.CreateMap<Produto, ProdutoViewModel>()
+            Mapper.CreateMap<Produto, ProdutoListaViewModel>()
             .ForMember (dest=> dest.Categoria, opt => opt.MapFrom(src => src.Categoria.Nome));
-            Mapper.CreateMap<ProdutoViewModel, Produto>()
-                .ForMember(dest => dest.Categoria, opt =>opt.Ignore());
+            Mapper.CreateMap<ProdutoViewModel, Produto>();         
+            Mapper.CreateMap<Produto, ProdutoViewModel>();
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿
 @model LojaVirtualCleiton.Models.ProdutoViewModel
 @{ 
-    ViewBag.Title = Model == null|| Model.Id == null? "Novo Produto" : "Editando Produto";
+    ViewBag.Title = Model == null|| Model.Id == null? "Novo Fornecedor" : "Editando Fornecedor";
 }
 
-<h2>@(Model == null || Model.Id == null? "Novo" : "Editando")  Produto</h2>
+<h2>@(Model == null || Model.Id == null? "Novo" : "Editando")  Forncedor</h2>
 
 @using (Html.BeginForm("Editar", "Produto", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
