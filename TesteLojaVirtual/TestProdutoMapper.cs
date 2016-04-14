@@ -22,7 +22,7 @@ namespace TesteLojaVirtual
             var produto = new Produto
             {
                 Nome = "Chuteira Nike",
-                Categoria = new Categoria
+                Categoria = new Fornecedor
                 {
                     Nome = "Calcados"
                 }
@@ -38,7 +38,7 @@ namespace TesteLojaVirtual
             var produto = new Produto
             {
                 Nome = "Chuteira Nike",
-                Categoria = new Categoria
+                Categoria = new Fornecedor
                 {
                     Nome = "Calcados"
                 }
@@ -54,7 +54,7 @@ namespace TesteLojaVirtual
             var produto = new Produto
             {
                 Nome = "Chuteira Nike",
-                Categoria = new Categoria
+                Categoria = new Fornecedor
                 {
                     Nome = "Calcados"
                 }

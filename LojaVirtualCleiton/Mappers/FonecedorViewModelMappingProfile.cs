@@ -8,12 +8,12 @@ using System.Web;
 
 namespace LojaVirtualCleiton.Mappers
 {
-    public class CategoriaViewModelMappingProfile: Profile
+    public class FornecedorViewModelMappingProfile: Profile
     {
         protected override void Configure()
         {
-            Mapper.CreateMap<Fornecedor, CategoriaViewModel>();
-            Mapper.CreateMap<CategoriaViewModel, Fornecedor>();
+            Mapper.CreateMap<Fornecedor, FornecedorViewModel>();
+            Mapper.CreateMap<FornecedorViewModel, Fornecedor>();
            
         }
     }

@@ -1,9 +1,9 @@
-﻿@model List<LojaVirtualCleiton.Models.ProdutoListaViewModel>
+﻿@model List<LojaVirtualCleiton.Models.FornecedorViewModel>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Lista de  Produtos</h2>
+<h2>Lista de  Fornecedor</h2>
 
 <a href="@Url.Action("Editar","Fornecedor")"style="float: right;"> Novo Fornecedor</a>
 
@@ -12,11 +12,9 @@
     {
         <tr>
             <td>@item.Nome</td>
-            <td>@item.Categoria</td>
-            <td>@item.Fornecedor</td>
-            <td>
+                       <td>
                 @Html.ActionLink("Editar", "Editar", "Fornecedor", new { id = item.Id }, null)
-            @Html.ActionLink("Apagar", "Apagar", "Fornecedor", new { id = item.Id }, null)
+                @Html.ActionLink("Apagar", "Apagar", "Fornecedor", new { id = item.Id }, null)
         </td>
         </tr>
     }

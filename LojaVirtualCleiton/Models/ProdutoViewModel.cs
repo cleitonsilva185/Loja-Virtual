@@ -17,5 +17,7 @@ namespace LojaVirtualCleiton.Models
 
         public IList<CategoriaViewModel> Categorias { get; set; }
 
+        public IList<FornecedorViewModel>Fornecedores { get; set; }
+
     }
 } 
